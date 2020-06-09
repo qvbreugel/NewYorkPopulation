@@ -1,4 +1,4 @@
-const imagePath = "../maps/svg";
+const imagePath = "./maps/svg";
 const totalFrames = 10;
 const animationDuration = 10000;
 const timePerFrame = animationDuration / totalFrames;
