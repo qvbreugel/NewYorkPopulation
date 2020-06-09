@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>New York's Population</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center"><h1>New York, New York</h1></div>
+      <div class="row justify-content-center">
+        <div class="col align-self-center">
+          <h3>Picking a dataset</h3>
+          <p>
+            The Big Apple, The City That Never Sleeps, Empire City. Whatever
+            your favourite nickname for New York City is, I
+            <strong>love</strong> this magnificent city. As soon as I came
+            across
+            <a href="https://opendata.cityofnewyork.us/">NYC Open Data</a>, I
+            was sure I wanted to use a dataset from this website. The difficult
+            part was actually picking a dataset. Many of these datasets sparked
+            the creative part in my brain and I was unsure what I wanted to work
+            on. In the end, I went with
+            <a
+              href="https://data.cityofnewyork.us/City-Government/New-York-City-Population-by-Borough-1950-2040/xywu-7bv9"
+              >New York City's Population by Borough from 1950-2040</a
+            >. I immediately had an idea of what I wanted to show and how I
+            wanted to represent this. </br></br>
+            The realisation of this idea can be
+            viewed on the right; a map that depicts the five boroughs'
+            population as a percentage of the total population in NYC. To me,
+            the results were rather interesting. Contrary to my (completely
+            ungrounded) hypotheses, people moved out of Manhattan and into
+            Queens. The visualisations show that people moved out of Brooklyn in
+            the past few decades. However, the predictions of 2030 and 2040 show
+            an increase in this borough's relative population. Staten Island
+            shows a steady increase in relative population and The Bronx follows
+            a similar pattern to that of Brooklyn.
+          </p>
+        </div>
+        <div class="col">
+          <img src="../maps/svg/relative_population_1.svg" class="relative-population" />
+          <input
+            type="range"
+            class="relative-slider"
+            step="1"
+            min="1"
+            max="10"
+            value="1"
+          />
+        </div>
+        
+      </div>
+      <div class="row justify-content-center">
+      <div class="col">
+        <img src="../maps/svg/absolute_population_1.svg" class="absolute-population" />
+        <input
+          type="range"
+          class="absolute-slider"
+          step="1"
+          min="1"
+          max="10"
+          value="1"
+        />
+      </div>
+      <div class="col align-self-center">
+        <h3>Working with unfamiliar tools</h3>
+        <p>
+          For this challenge, I knew I wanted to experiment with some code. I had worked with python before and a lot with JavaScript, but never used it to create graphs, maps or even animations. 
+          So, the visualisation challenge seemed like a proper time to start exploring these domains of the programming world. To generate the images, I used a combination of three python libraries: <a href="https://pandas.pydata.org/">pandas</a>,
+          <a href="https://geopandas.org/">geopandas</a> and <a href="https://matplotlib.org/">matplotlib</a>. As these libraries have a large number of dependencies, I worked in <a href="https://jupyter.org/"></a>jupyter notebook because the <a href="https://docs.conda.io/en/latest/">conda environment</a> already contained
+          a large number of these dependencies.
+
+        </br></br>
+        To build my story around this, I used <a href="https://getbootstrap.com/">bootstrap</a> for fast creation of the website and <a href="https://jqueryui.com/">JQuery</a> to build the interactive slider and animation using the generated images.
+        One of the results can be found left to this paragraph; the same animation as before with absolute numbers. It shows roughly the same pattern as with the relative population change.
+        </p>
+      </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col align-self-center text-right">
+          <h3>Visualisation</h3>
+          <p>
+            In my opinion, the change in both relative and absolute population can be slightly difficult to see. This is mainly caused by Staten Island. 
+            Generally, it's population and it's percentage of the total NYC population are significantly lower than the ones of the other four boroughs.
+            Therefore, the minimum value has to set quite low compared to the other variables. This causes less variations in colour in the higher values.
+            Since the values of the other four boroughs can be considered high and because Staten Island's pattern is already pretty clear, I decided to recreate the visualisations
+            without showing this borough. To minimise impact on performance, the visualisations can be found on <a href="withoutstatenisland.html">this page</a>.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col align-self-center">
+          <h3>Reflection</h3>
+          <p>
+            Even though, I think I reached the goal for this visualisation challenge, I'm not entirely happy with the final result.
+            This can be blamed on my poor planning. Because I wasn't entirely sure what colour scheme I wanted to use, I used different ones.
+            Only using different colour schemes for the relative and absolute values for example would have provided more consistency. 
+            Furthermore, this website is very slow. I believe this has to do with me the high quality of the images and inefficient coding.
+            The speed of the website definitely impacts the user experience in a negative way. Also, I wish I would have taken the time to really get to know the libraries I used for the visualisations.
+            I struggled with essential tasks such as renaming the legend, labeling the slider and styling the titles making the final product not as polished as I wish it would have been.
+  
+          </br></br>
+          Besides the points of improvement mentioned in the previous paragraph, I think this challenge is a good start. 
+          I got acquainted with new python libraries and learnt new programming skills. 
+          Despite my time management issues, I believe my visualisation is of decent quality.
+          In the end, I really enjoyed working on this project involving the city of my dreams.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <p>Quinten van Breugel - s2395916 - University of Twente</p>
+      </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="animation.js">
+    </script>
+    <script src="absoluteAnimation.js"></script>
+      <script src="absoluteAnimationNoSi.js">
+    </script>
+    <script src="relativeAnimationNoSi.js">
+    </script>
+  </body>
+</html>
